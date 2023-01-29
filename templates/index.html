@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if data != 0 %}
+        <title>Records for {{ data[1].upper() }} - Date : {{ data[2] }}</title>
+    {% else %}
+        <title>No records found</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+        <span class="logo-name">Weathery</span>
+    </div>
+    <div>
+        <form action="/" method="post" class="search_form">
+            <input type="text" placeholder="station" name="nom_station" class="search" required>
+            <input type="date"  name="date" class="search" required>
+            <input type="submit" value="Search" class="btn">
+        </form>
+    </div>
+</header>
+
+<main>
+    {% if data != 0 %}
+        <div>
+            <p class="info">Records for {{ data[1].upper() }} - Date : {{ data[2] }}</p>
+
+        </div>
+        <div class="graphs">
+            <img src="{{ url_for('static', filename='images/temperatures.png') }}" alt="">
+            <img src="{{ url_for('static', filename='images/pression.png') }}" alt="">
+            <img src="{{ url_for('static', filename='images/vitesse.png') }}" alt="">
+            <img src="{{ url_for('static', filename='images/humidite.png') }}" alt="">
+        </div>
+        <div class="wordcloud">
+            <p class="wordcloud-title">word cloud</p>
+            <img src="{{ url_for('static', filename='images/wordcloud.png') }}" alt="">
+        </div>
+    {% else %}
+                <p class="info">No records found, please try again.</p>
+    {% endif %}
+
+</main>
+</body>
+</html>

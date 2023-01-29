@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-name {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo-name:hover {
+    color: #e40b89;
+}
+
+.search_form {
+    display: flex;
+    column-gap: 4px;
+}
+
+.search {
+    padding: 5px 10px;
+    border: 2px #131212 solid;
+}
+.search::placeholder{
+    font-weight: 600; 
+    text-transform: capitalize;
+}
+
+.btn {
+    padding: 8px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #23bae7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #0bb2e4;
+}
+
+.info {
+    margin-top: 60px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.graphs {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0 40px;
+}
+
+.wordcloud {
+    margin-top: 65px;
+    width: 100%;
+    text-align: center;
+}
+
+.wordcloud-title {
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
